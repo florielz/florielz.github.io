@@ -46,36 +46,134 @@
 									<source src="videos/snake.mp4">
 									<source src="videos/snake.webm">
 								</video>
-								<h3>Snake ++</h3>
-								<p>Création d'un snake en C++ avec la bibliothèque SFML</p>
+								<a href="#S"><h3>Snake ++</h3></a>
+								<p>Création d'un snake en C++ avec la bibliothèque SFML. Octobre&nbsp2015.</p>
 							</article>
 							<article class="6u$ 12u$(xsmall) work-item">
 								<video controls="controls" poster="images/DarkSide.jpg" width = 100% style = "border-radius: 20px">
 									<source src="videos/the_darkside_of_norwich.mp4">
 									<source src="videos/the_darkside_of_norwich.webm">
 								</video>
-								<h3>The Dark Side of Norwich</h3>
+								<a href="#TDSN"><h3>The Dark Side of Norwich</h3></a>
 								<p>Création d'un jeu d'aventure en mode texte en Java<br />
-								en binôme avec Maxime Diversay</p>
+								en binôme avec Maxime Diversay. Décembre&nbsp2015.</p>
 							</article>
 							<article class="6u 12u$(xsmall) work-item">
 								<video controls="controls" poster="images/Binero.jpg" width = 100% style = "border-radius: 20px">
 									<source src="videos/binero.mp4">
 									<source src="videos/binero.webm">
 								</video>
-								<h3>Binero</h3>
-								<p>Adaptation sur ordinateur du jeu de réflexion Binero en C avec la bibliothèque SDL</p>
+								<a href="#B"><h3>Binero</h3></a>
+								<p>Adaptation sur ordinateur du jeu de réflexion Binero en C avec la bibliothèque SDL. Avril&nbsp2015.</p>
 							</article>
 							<article class="6u 12u$(xsmall) work-item">
 								<video controls="controls" poster="images/Pendu.jpg" width = 100% style = "border-radius: 20px">
 									<source src="videos/pendu.mp4">
 									<source src="videos/pendu.webm">
 								</video>
-								<h3>Pendu</h3>
-								<p>Adaptation sur ordinateur du jeu du pendu en Ada avec la bibliothèque NT_Console</p>
+								<a href="#P"><h3>Pendu</h3></a>
+								<p>Adaptation sur ordinateur du jeu du pendu en Ada avec la bibliothèque NT_Console. Décembre&nbsp2014</p>
 							</article>
 						</div>
 					</section>
+
+				<!-- Three -->
+					<section id="three">
+						<h2>Description des projets</h2>
+						<div class="row">
+							<h3 id="TDSN">The Dark Side of Norwich</h3><br />
+							<div style="margin:0px 30px;">
+								<h4>Teaser</h4>
+								
+								<p>
+									Dans ce jeu vous incarnez un chasseur de monstres que l'on a engagé pour "nettoyer" un manoir dans la ville de Norwich.<br />
+									Votre arsenal de chasseur n'a pas pu passer les portiques de sécurité de l'aéroport et vous vous retrouvez donc sans armes. Pour progresser, vous devrez donc récupérer ce dont vous avez besoin à l'intérieur du manoir.<br />
+									Au fur et à mesure de votre progression, vous vous rendez compte que quelque chose vous lie au manoir.<br />
+									Saurez vous capable de venir à bout du mal qui hante ce manoir ?
+								</p>
+
+								<h4>Description</h4>
+								<p>
+									Ce jeu a été réalisé dans le cadre du cours de Programmation Orienté Objet de l'Université de Poitiers.
+									La liste des commandes est détaillée au joueur lorsqu'il tape "aide" dans le jeu, la seule fonctionnalité qui n'est pas clairement décrite est celle du changement d'arme du héros qui se fait par la commande : utiliser + "le nom de l'arme".					
+								</p>
+
+								<h4>Pistes d'améliorations</h4>
+								<p>
+									Une amélioration possible serait de ne pas redonner toute sa vie au héros après les combats mais il aurait fallu introduire un système de potion ou de consommable et les disséminer un peu partout dans le manoir en n'oubliant pas le fait qu'elles doivent être trouvable par le héros au moment où il en a besion.<br /><br />
+
+									Avec beaucoup plus de temps, nous pourrions également instaurer un système de combat qui ne serait pas automatique mais il aurait alors fallu créer tout un système de stratégie et d'attaque de façon à ce que les combats soient intéressants et non pas uniquement plus long qu'en mode automatique.<br /><br />
+
+									Nous avons renoncé à des attributs pour le héros qui auraient influé sur les dégâts qu'il inflige à un certain type d'ennemi par exemple un attribut loup garou = 6 et un attribut ogre = 2, ce qui aurait rendu le héros plus fort contre les loups garou que contre les ogres et ces attributs auraient augmenté au fur et mesure des combats contre ces différents ennemis. Mais le nombre de monstres du manoir ne permettait pas d'exploiter cette fonctionnalité et nous avons donc décidé de ne pas l'implanté.
+								</p>
+
+								<p align=right>
+									Décembre&nbsp2015
+								</p>
+								<br />
+							</div>	
+							<h3 id="B">Binero</h3><br />
+							<div style="margin:0px 30px;">
+								<h4>Description</h4>
+								<p>
+									Ce projet a été réalisé dans le cadre du cours de Programmation en C de l'Université de Poitiers.<br />
+									La bibliothèque graphique SDL a permis d'obtenir un rendu beaucoup plus attractif que le simple affichage console demandé dans l'énoncé du projet.<br /><br />
+									Le binero est un jeu du même type que le Sudoku, c'est un mélange de jeu de chiffres et de jeu de logique.<br />
+									Le but est de remplir la grille avec des 0 et des 1 (d'où le nom de binero).<br /><br />
+									Pour remplir la grille, il faut respecter trois règles :
+									<ul>
+										<li>
+											Il ne peut y avoir plus de deux 0 ou deux 1 consécutifs
+										</li>
+										<li>
+											Il y a le même nombre de 0 et de 1 sur chaque ligne et chaque colonne
+										</li>
+										<li>
+											Il ne peut y avoir deux colonnes ou deux lignes identiques
+										</li>
+									</ul>
+								</p>
+								<p align=right>
+									Avril&nbsp2015
+								</p>
+								<br />
+							</div>
+							<h3 id="S">Snake ++</h3><br />
+							<div style="margin:0px 30px;">
+								<h4>Description</h4>
+								<p>
+									Projet personnel réalisé en C++ avec la bibliothèque graphique SFML reproduisant le mythique Snake.<br />
+									Un mode 2 joueurs est en cours de développement ainsi que le tableau des scores.
+								</p>
+
+								<p align=right>
+									Octobre&nbsp2015
+								</p>
+								<br />
+							</div>
+							<h3 id="P">Pendu</h3><br />
+							<div style="margin:0px 30px;">
+								<h4>Description</h4>
+								<p>
+									Projet personnel réalisé en Ada avec la bibliothèque NT_Console qui permet de manipuler la console.<br /><br />
+									Le jeu propose 2 modes :
+									<ul>
+										<li>
+											Contre l'ordinateur. Dans ce mode, le joueur va devoir trouver un mot que l'ordinateur a choisi parmis l'ensemble des mots que j'ai intégré à la base de donnée. 
+										</li>
+										<li>
+											Contre un ami. Dans ce mode, le premier joueur doit entrer un mot. Le jeu l'enregistre et le cache puis c'est au deuxième joueur de trouver le mot.
+										</li>
+									</ul> 
+								</p>
+
+								<p align=right>
+									Décembre&nbsp2014
+								</p>
+								<br />
+							</div>
+						</div>
+					</section>	
 			</div>
 
 		<!-- Footer -->
