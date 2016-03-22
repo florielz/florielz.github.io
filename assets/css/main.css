@@ -2469,7 +2469,7 @@
 		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								auto 100%;
+		/*background-size: auto,								auto 100%;*/
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
@@ -2544,6 +2544,19 @@
 				#footer .copyright li a {
 					color: inherit;
 				}
+
+/* Menu */
+
+#menu {
+    margin-left: 35%;
+    text-align: center;
+    width: calc(100% - 35%);
+    position: fixed;
+    z-index: 1000;
+}
+#menu a{
+    border: medium none;
+}
 
 /* Main */
 
@@ -2878,6 +2891,12 @@
 					padding-left: 0;
 				}
 
+        /* Menu */
+			#menu {
+				margin-left: 30%;
+				max-width: none;
+				width: calc(100% - 30%);
+			}
 		/* Main */
 
 			#main {
@@ -2960,6 +2979,14 @@
 						padding-left: 0.75em;
 					}
 
+        /* Menu */
+        
+			#menu {
+				margin: 0;
+				width: 100%;
+                position: relative;
+			}
+
 		/* Main */
 
 			#main {
@@ -3023,6 +3050,12 @@
 			#footer {
 				padding: 2.25em 1.5em;
 			}
+
+        /* Menu */
+        
+			/*#menu {
+				padding: 2.25em 1.5em 0.25em 1.5em;
+			}*/
 
 		/* Main */
 
