@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Florian Nadaud</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+	</head>
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+				<h1><strong>FLORIAN NADAUD</strong><br />
+				Étudiant en Informatique.<br />
+				Université de Poitiers.<br />
+				Passionné de jeux vidéo.<br />
+				Handballeur.<br />
+				Geek et Sportif.<br /></h1>
+			</header>
+
+        <!-- Menu -->        
+        <div id="menu">
+            <div class="navbar navbar-inverse">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>  
+                      <span class="icon-bar"></span> 
+                  </button>
+                    <a class="navbar-brand" href="#">Menu</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Accueil</a> </li>
+                        <li class="active"><a href="InteractiveRGBTransparency.html">Interactive&nbsp;RGB&nbsp;Transparency</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projets 2016
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="StarzonValley.html">Starzon&nbsp;Valley</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projets 2015
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="TheDarkSideOfNorwich.html">The&nbsp;Dark&nbsp;Side&nbsp;of&nbsp;Norwich</a></li>
+                                <li><a href="Binero.html">Binero</a></li>
+                                <li><a href="Snake.html">Snake</a></li>
+                                <li><a href="Pendu.html">Pendu</a></li>
+                            </ul>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+		<!-- Main -->
+        
+			<div id="main">
+                <h1>Interactive&nbsp;RGB&nbsp;Transparency</h1><br />
+                <img src="images/InteractiveRGBTransparency.jpg" width = 100% style = "border-radius: 20px">
+                <div style="margin:0px 30px;">
+                    <h4>Description</h4>
+                    <p>
+                        L’objectif de mon stage de fin de licence était d’améliorer un logiciel existant (également réalisé lors d’un stage de fin de licence) sur la gestion de la transparence entre deux images. Il existe
+                        différentes façons de mélanger des couleurs comme la synthèse additive (qui correspond à la
+                        juxtaposition de zones colorées comme sur les écrans) ou la synthèse soustractive (qui
+                        correspond à la superposition de filtres colorés). Actuellement, seule la transparence additive
+                        est proposée par les logiciels les plus usuels tels que Powerpoint. Le logiciel que je modifie
+                        permet de passer de la transparence additive à la transparence soustractive.
+                    </p>
+                    <div class="row">    
+                        <article class="4u 12u$(xsmall) work-item">
+                                <img src="images/transparenceAddi.jpg" width = 100% style = "border-radius: 20px">
+                                <center><h3>Transparence Additive</h3></center>                             
+                        </article>
+                        <article class="4u 12u$(xsmall) work-item">
+                                <img src="images/transparenceIntermediaire.jpg" width = 100% style = "border-radius: 20px">
+                                <center><h3>Transparence Intermédiaire</h3></center>                             
+                        </article>
+                        <article class="4u 12u$(xsmall) work-item">
+                                <img src="images/transparenceSous.jpg" width = 100% style = "border-radius: 20px">
+                                <center><h3>Transparence Soustractive</h3></center>
+                        </article>
+                    </div>
+                    <p>
+                        Dans ce logiciel la transparence inverse est également possible, cela consiste à retrouver la
+                        couleur d’arrière-plan pour permettre, par exemple, un dévernissage virtuel de tableaux :
+                    </p>
+                    <div class="row">    
+                        <article class="6u 12u$(xsmall) work-item">
+                                <img src="images/JocondeVerni.jpg" width = 100% style = "border-radius: 20px">                               
+                        </article>
+                        <article class="6u 12u$(xsmall) work-item">
+                                <img src="images/JocondeNonVerni.jpg" width = 100% style = "border-radius: 20px">                          
+                        </article>
+                    </div>
+                    <p>
+                        Mon objectif était d’implémenter un nouveau modèle qui consiste à généraliser les lois de
+                        mélange à travers une fonction : f(x) = x<sup>p</sup>(1 − x)<sup>q</sup><br/>
+                        Cette fonction permet de retrouver tous les types de transparence en faisant varier p et q.
+                        Par exemple pour p = 1 et q = 0, on obtient la transparence additive et pour q = 0 et p qui tend
+                        vers 0, on obtient la transparence soustractive.
+                    </p>
+                    
+                    <p>
+                        Le logiciel est divisé en trois parties. J'ai corrigé quelques bugs de la première partie : "From subtractive to additive transparency". Puis j'ai crée les parties "Transparency as generalized f-mean" et "Translecency by a scattering layer".<br/>
+                        Je devais également réaliser un site internet pour présenter le logiciel et également permettre son téléchargement.
+                        <br/><br/>
+                        Le site que j'ai réalisé est disponible à cette adresse : <a href="http://rgbtransparency.edel.univ-poitiers.fr/" target="_blank">http://rgbtransparency.edel.univ-poitiers.fr</a>
+                        <br/>
+                        Dans le cas où le site aurait été modifié, vous pouvez retrouver ma version <a href="tranparencyWebsite/presentation.html" target="_blank">sur cette page</a>
+                    </p>
+                    
+                    <h4>Remerciements</h4>
+                    <p>
+                        Je tiens à remercier mon maître de stage M. SIMONOT qui m'a permis de perfectionner mes compétences en JAVA à travers ce stage qui fût très intéressant.
+                    </p>
+
+                    <p align=right>
+                        Juin&nbsp;2016
+                    </p>
+                    <br />
+                </div>
+        </div>
+    
+    <!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>Mail : <a href="mailto:florian.nadaud@etu.univ-poitiers.fr" title="contactez moi">florian.nadaud@etu.univ-poitiers.fr</a></li>
+				</ul>
+			</footer>
+    
+    <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

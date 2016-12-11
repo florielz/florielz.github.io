@@ -2473,7 +2473,7 @@
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
-		padding: 8em 4em 0 0;
+		padding: 6em 4em 0 0;
 		position: fixed;
 		text-align: right;
 		top: 0;
@@ -2497,7 +2497,7 @@
 
 		#header .image.avatar {
 			margin: 0 0 1em 0;
-			width: 6.25em;
+			width: 7.25em;
 		}
 
 /* Footer */
