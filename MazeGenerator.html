@@ -44,20 +44,20 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Accueil</a> </li>
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projets 2017
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="MazeGenerator.html">Maze Generator</a></li>
+                                <li class="active"><a href="MazeGenerator.html">Maze Generator</a></li>
                                 <li><a href="SnakeP5.html">Snake P5</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projets 2016
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="InteractiveRGBTransparency.html">Interactive&nbsp;RGB&nbsp;Transparency</a></li>
-                                <li class="active"><a href="StarzonValley.html">Starzon&nbsp;Valley</a></li>
+                            	<li><a href="InteractiveRGBTransparency.html">Interactive&nbsp;RGB&nbsp;Transparency</a></li>
+                                <li><a href="StarzonValley.html">Starzon&nbsp;Valley</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -78,24 +78,40 @@
 		<!-- Main -->
         
 			<div id="main">
-                <h1>Starzon&nbsp;Valley</h1><br />
-                <video controls="controls" width = 100% style = "border-radius: 20px">
-                           <source src="videos/Starzon_Valley.webm">
-									<source src="videos/Starzon_Valley.mp4">
-								</video>
-							<div style="margin:0px 30px;">
-								<h4>Description</h4>
-								<p>
-									Starzon Valley est un site de vente imaginaire que nous avons crée dans le cadre de notre cours de Programmation Web de Licence à l'univesité de Poitiers.
-                                    Le but de ce projet était de créer un site de vente avec le framework CakePHP.
-                                    Nous avons géré l'authentification sur le site, la gestion des utilisateurs par un administrateur, la séléction des produits et l'ajout des produits dans le panier par un client						
-                                </p>
+                <h1>Maze Generator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="PlayMazeGenerator.html" target="_blank" class="btn btn-default" role="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version classique&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="PlayMazeGeneratorHexa.html" target="_blank" class="btn btn-default" role="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version hexagonale&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                </h1> <br />
+                <div class="row">
+                    <article class="6u 12u$(xsmall) work-item">
+                        <img src="images/MazeGeneratorHexa.jpg" width = 100% style = "border-radius: 20px">
+                    </article>
+                    <article class="6u 12u$(xsmall) work-item">
+                        <img src="images/MazeGenerator.jpg" width = 100% style = "border-radius: 20px">
+                    </article>
+                </div>
+                
+                
+				<div style="margin:0px 30px;">
+					<h4>Description</h4>
+					<p>
+						Petit projet personnel réalisé en JavaScript avec la bibliothèque P5.<br />
+                        Il s'agit d'un générateur de labyrinthe dans lequel on peut se déplacer une fois la génération terminée.
+                        Dans la version classique, les déplacements se font avec les flêches du clavier et dans la version hexagonale, les déplacements se font avec le pavé numérique : <br/>
+                        <ul>
+                            <li> le 4 déplace vers le coin en bas à gauche</li>
+                            <li> le 5 vers le bas</li>
+                            <li> le 6 vers le coin en bas à droite </li>
+                            <li> le 7 vers le coin en haut à gauche</li>
+                            <li> le 8 vers le haut</li>
+                            <li> le 9 vers le coin en haut à droite </li>
+					</p>
 
-								<p align=right>
-									Avril&nbsp;2016
-								</p>
-								<br />
-							</div>
+					<p align=right>
+						Février&nbsp;2017
+					</p>
+					<br />
+				</div>	
         </div>
     
     <!-- Footer -->
