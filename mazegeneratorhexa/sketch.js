@@ -3,11 +3,13 @@ var sz = 30;
 var cols;
 var raws;
 var current;
+var last;
 var stack = [];
 var generated = false;
 
 function setup() {
 	createCanvas(600, 600);
+	//frameRate(2);
 	cols = width / sz - 7;
 	raws = height / sz * 2 - 7;
 	for (var j = 0; j < raws; j++) {
@@ -16,17 +18,24 @@ function setup() {
 		}
 	}
 	current = grid[0];
+	last = current;
 	current.visited = true;
 	current.seen = true;
+	for (var i = 0; i < grid.length; i++) {
+		grid[i].show();
+	}
 }
 
 function draw() {
 	//background(51);
-	for (var i = 0; i < grid.length; i++) {
-		grid[i].show();
-	}
+	// for (var i = 0; i < grid.length; i++) {
+	// 	grid[i].show();
+	// }
+	last.show();
+	current.show();
 	if (!generated) {
 		var next = current.checkNeighbors();
+		last = current;
 		if (next) {
 			stack.push(current);
 			next.visited = true;
@@ -45,6 +54,7 @@ function draw() {
 			}
 		}
 	} else {
+		last = current;
 		noStroke();
 		if (current.i != 0 || current.j != 0) {
 			fill(255, 0, 0);
@@ -184,12 +194,21 @@ function Cell(i, j) {
 		if (generated && this.seen) {
 			fill(0, 120, 189);
 		}
-		triangle(x + sz / 2, y + sz / 2, x + sz / 4, y, x, y + sz / 2); // top left
-		triangle(x + sz / 2, y + sz / 2, x + 3 * sz / 4, y, x + sz / 4, y); // top
-		triangle(x + sz / 2, y + sz / 2, x + sz, y + sz / 2, x + 3 * sz / 4, y); // top right
-		triangle(x + sz / 2, y + sz / 2, x + 3 * sz / 4, y + sz, x + sz, y + sz / 2); // bot right
-		triangle(x + sz / 2, y + sz / 2, x + sz / 4, y + sz, x + 3 * sz / 4, y + sz); // bot
-		triangle(x + sz / 2, y + sz / 2, x, y + sz / 2, x + sz / 4, y + sz); // bot left
+		// triangle(x + sz / 2, y + sz / 2, x + sz / 4, y, x, y + sz / 2); // top left
+		// triangle(x + sz / 2, y + sz / 2, x + 3 * sz / 4, y, x + sz / 4, y); // top
+		// triangle(x + sz / 2, y + sz / 2, x + sz, y + sz / 2, x + 3 * sz / 4, y); // top right
+		// triangle(x + sz / 2, y + sz / 2, x + 3 * sz / 4, y + sz, x + sz, y + sz / 2); // bot right
+		// triangle(x + sz / 2, y + sz / 2, x + sz / 4, y + sz, x + 3 * sz / 4, y + sz); // bot
+		// triangle(x + sz / 2, y + sz / 2, x, y + sz / 2, x + sz / 4, y + sz); // bot left
+
+		beginShape();
+		vertex(x + sz / 4, y);
+		vertex(x + 3 * sz / 4, y);
+		vertex(x + sz, y + sz / 2);
+		vertex(x + 3 * sz / 4, y + sz);
+		vertex(x + sz / 4, y + sz);
+		vertex(x, y + sz / 2);
+		endShape(CLOSE);
 
 		if (this.active) {
 			stroke(255);
