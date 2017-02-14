@@ -7,19 +7,23 @@ var lastSc = 0;
 var laMessage = "Last score";
 var currentSc = 0;
 var cuMessage = "Current score";
-var wdth = 500;
+var gameWidth = 500;
+var wdth = gameWidth + 200;
+var hght = gameWidth;
+var pause = false;
 
 var food;
 
 function setup() {
-  createCanvas(wdth + 200, wdth);
+  /*createCanvas(gameWidth + 200, gameWidth);*/
+  createCanvas(windowWidth - 20, windowHeight - 20);
   s = new Snake();
   pickLocation();
 }
 
 function pickLocation() {
-  var cols = floor(wdth / scl);
-  var rows = floor(height / scl);
+  var cols = floor(gameWidth / scl);
+  var rows = floor(hght / scl);
   var col = floor(random(cols));
   var row = floor(random(rows));
   var retry;
@@ -48,10 +52,13 @@ function pickLocation() {
 }
 
 function draw() {
-  background(51);
+  background(255);
+  translate(width / 2 - wdth / 2, 3 * height / 7 - hght / 2);
+  fill(51);
+  rect(0, 0, wdth + 1, hght + 1);
   stroke(255);
   for (var i = 0; i < 5; i++) {
-    line(wdth + 1 + i, 0, wdth + 1 + i, height);
+    line(gameWidth + 1 + i, 0, gameWidth + 1 + i, hght);
   }
   stroke(0);
 
@@ -64,7 +71,6 @@ function draw() {
   if (s.xspeed != 0 || s.yspeed != 0) {
     s.update();
   }
-  s.show();
 
   if (food.gold) {
     fill(255, 200, 0);
@@ -73,19 +79,22 @@ function draw() {
   }
   rect(food.x, food.y, scl, scl);
 
+  s.show();
+
+
   textSize(25);
   fill(255, 0, 100);
-  text(beMessage, wdth + 35, 30);
-  text(bestSc, wdth + 80, 60);
-  text(laMessage, wdth + 35, 100);
-  text(lastSc, wdth + 80, 130);
-  text(cuMessage, wdth + 18, 170);
-  text(currentSc, wdth + 80, 200);
+  text(beMessage, gameWidth + 35, 30);
+  text(bestSc, gameWidth + 80, 60);
+  text(laMessage, gameWidth + 35, 100);
+  text(lastSc, gameWidth + 80, 130);
+  text(cuMessage, gameWidth + 18, 170);
+  text(currentSc, gameWidth + 80, 200);
   var cmdTitle = "Commands";
-  text(cmdTitle, wdth + 34, 300);
+  text(cmdTitle, gameWidth + 34, 300);
   textSize(18);
   var cmdMessage = "MOVE  : ARROWS\nPAUSE : SPACE";
-  text(cmdMessage, wdth + 22, 350);
+  text(cmdMessage, gameWidth + 22, 350);
 }
 
 function keyPressed() {
@@ -102,6 +111,12 @@ function keyPressed() {
     if (s.xspeed != 1)
       s.dir(-1, 0);
   } else if (keyCode === 32) { //SPACE
-    s.dir(0, 0);
+    if (pause) {
+      loop();
+      pause = false;
+    } else {
+      noLoop();
+      pause = true;
+    }
   }
 }

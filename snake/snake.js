@@ -60,18 +60,18 @@ function Snake() {
     this.x = this.x + this.xspeed * scl;
     this.y = this.y + this.yspeed * scl;
 
-    if (this.x >= wdth) {
+    if (this.x >= gameWidth) {
       this.x = 0;
     } else if (this.x < 0) {
-      this.x = wdth;
-    } else if (this.y >= height) {
+      this.x = gameWidth;
+    } else if (this.y >= hght) {
       this.y = 0;
     } else if (this.y < 0) {
-      this.y = height;
+      this.y = hght;
     }
 
-    this.x = constrain(this.x, 0, wdth - scl);
-    this.y = constrain(this.y, 0, height - scl);
+    this.x = constrain(this.x, 0, gameWidth - scl);
+    this.y = constrain(this.y, 0, hght - scl);
   }
 
   this.show = function() {
@@ -79,6 +79,60 @@ function Snake() {
     for (var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x, this.tail[i].y, scl, scl);
     }
-    rect(this.x, this.y, scl, scl);
+    this.drawHead();
+  }
+
+  this.drawHead = function(){
+    if(this.yspeed > 0){ // vers le bas
+      beginShape();
+      vertex(this.x          , this.y        );
+      vertex(this.x + scl    , this.y        );
+      vertex(this.x + scl    , this.y + scl/2);
+      vertex(this.x + scl*3/4, this.y + scl  );
+      vertex(this.x + scl/4  , this.y + scl  );
+      vertex(this.x          , this.y + scl/2);
+      endShape(CLOSE);
+      line(this.x+scl/4 + 2, this.y+scl/2 - 2, this.x+scl/4 + 2, this.y+scl/2 + 2);
+      line(this.x+scl*3/4 - 2, this.y+scl/2 - 2, this.x+scl*3/4 - 2, this.y+scl/2 + 2);
+    }
+    else if(this.yspeed < 0){ // vers le haut
+      beginShape();
+      vertex(this.x + scl/4  , this.y        );
+      vertex(this.x + scl*3/4, this.y        );
+      vertex(this.x + scl    , this.y + scl/2);
+      vertex(this.x + scl    , this.y + scl  );
+      vertex(this.x          , this.y + scl  );
+      vertex(this.x          , this.y + scl/2);
+      endShape(CLOSE);
+      line(this.x+scl/4 + 2, this.y+scl/2 - 2, this.x+scl/4 + 2, this.y+scl/2 + 2);
+      line(this.x+scl*3/4 - 2, this.y+scl/2 - 2, this.x+scl*3/4 - 2, this.y+scl/2 + 2);
+    }
+    else if(this.xspeed > 0){ // vers la droite
+      beginShape();
+      vertex(this.x          , this.y          );
+      vertex(this.x + scl/2  , this.y          );
+      vertex(this.x + scl    , this.y + scl/4  );
+      vertex(this.x + scl    , this.y + scl*3/4);
+      vertex(this.x + scl/2  , this.y + scl    );
+      vertex(this.x          , this.y + scl    );
+      endShape(CLOSE);
+      line(this.x+scl/2 - 2, this.y+scl/4 + 2, this.x+scl/2 + 2, this.y+scl/4 + 2);
+      line(this.x+scl/2 - 2, this.y+scl*3/4 - 2, this.x+scl/2 + 2, this.y+scl*3/4 - 2);
+    }
+    else if(this.xspeed < 0){ // vers la gauche
+      beginShape();
+      vertex(this.x          , this.y + scl/4  );
+      vertex(this.x + scl/2  , this.y          );
+      vertex(this.x + scl    , this.y          );
+      vertex(this.x + scl    , this.y + scl    );
+      vertex(this.x + scl/2  , this.y + scl    );
+      vertex(this.x          , this.y + scl*3/4);
+      endShape(CLOSE);
+      line(this.x+scl/2 - 2, this.y+scl/4 + 2, this.x+scl/2 + 2, this.y+scl/4 + 2);
+      line(this.x+scl/2 - 2, this.y+scl*3/4 - 2, this.x+scl/2 + 2, this.y+scl*3/4 - 2);
+    }
+    else{
+      rect(this.x, this.y, scl, scl);
+    }
   }
 }

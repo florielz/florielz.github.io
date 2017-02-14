@@ -5,11 +5,15 @@ var raws;
 var current;
 var stack = [];
 var generated = false;
+var wdth = 600;
+var hght = 600;
 
 function setup() {
-	createCanvas(600, 600);
-	cols = width / sz;
-	raws = height / sz;
+	createCanvas(windowWidth-20, windowHeight-20);
+	
+	cols = wdth / sz;
+	raws = hght / sz;
+	translate(width/2 - wdth/2 , height/2 - hght/2);
 	for (var j = 0; j < raws; j++) {
 		for (var i = 0; i < cols; i++) {
 			grid.push(new Cell(i, j));
@@ -21,7 +25,10 @@ function setup() {
 }
 
 function draw() {
-	background(51);
+	translate(width/2 - wdth/2 , height/2 - hght/2);
+	//background(51);
+	fill(51);
+	rect(0,0,wdth,hght);
 	for (var i = 0; i < grid.length; i++) {
 		grid[i].show();
 	}
@@ -55,7 +62,7 @@ function draw() {
         }  
         if(current.i != cols-1 || current.j != raws-1){
             fill(0,255,0);
-            rect(width - sz +sz/3, height - sz +sz/3, sz-sz/1.5+1, sz-sz/1.5+1);
+            rect(wdth - sz +sz/3, hght - sz +sz/3, sz-sz/1.5+1, sz-sz/1.5+1);
         }
 	}
 }

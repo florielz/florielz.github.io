@@ -6,12 +6,15 @@ var current;
 var last;
 var stack = [];
 var generated = false;
+var wdth = 600;
+var hght = 600;
 
 function setup() {
-	createCanvas(600, 600);
-	//frameRate(2);
-	cols = width / sz - 7;
-	raws = height / sz * 2 - 7;
+	/*createCanvas(600, 600);*/
+	createCanvas(windowWidth - 20, windowHeight - 20);
+
+	cols = wdth / sz - 7;
+	raws = hght / sz * 2 - 7;
 	for (var j = 0; j < raws; j++) {
 		for (var i = 0; i < cols; i++) {
 			grid.push(new Cell(i, j));
@@ -21,16 +24,15 @@ function setup() {
 	last = current;
 	current.visited = true;
 	current.seen = true;
+	translate(width/2 - wdth/2 , height/2 - hght/2);
 	for (var i = 0; i < grid.length; i++) {
 		grid[i].show();
 	}
 }
 
 function draw() {
-	//background(51);
-	// for (var i = 0; i < grid.length; i++) {
-	// 	grid[i].show();
-	// }
+	translate(width/2 - wdth/2 , height/2 - hght/2);
+
 	last.show();
 	current.show();
 	if (!generated) {
