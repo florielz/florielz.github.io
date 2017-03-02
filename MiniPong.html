@@ -44,11 +44,11 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Accueil</a> </li>
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projets 2017
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-																<li><a href="MiniPong.html">Mini Pong</a></li>
+																<li class="active"><a href="MiniPong.html">Mini Pong</a></li>
                                 <li><a href="MazeGenerator.html">Maze Generator</a></li>
                                 <li><a href="SnakeP5.html">Snake P5</a></li>
                             </ul>
@@ -61,12 +61,12 @@
                                 <li><a href="StarzonValley.html">Starzon&nbsp;Valley</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projets 2015
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="TheDarkSideOfNorwich.html">The&nbsp;Dark&nbsp;Side&nbsp;of&nbsp;Norwich</a></li>
-                                <li class="active"><a href="Binero.html">Binero</a></li>
+                                <li><a href="Binero.html">Binero</a></li>
                                 <li><a href="Snake.html">Snake</a></li>
                                 <li><a href="Pendu.html">Pendu</a></li>
                             </ul>
@@ -78,38 +78,28 @@
 
 		<!-- Main -->
 
-			<div style = "text-align: justify" id="main">
-                <h1>Binero</h1><br />
-                <video controls="controls" poster="images/Binero.jpg" width = 100% style = "border-radius: 20px">
-									<source src="videos/binero.mp4">
-									<source src="videos/binero.webm">
-								</video>
-							<div style="margin:0px 30px;">
-								<h4>Description</h4>
-								<p>
-									Ce projet a été réalisé dans le cadre du cours de Programmation en C de l'Université de Poitiers.<br />
-									La bibliothèque graphique SDL a permis d'obtenir un rendu beaucoup plus attractif que le simple affichage console demandé dans l'énoncé du projet.<br /><br />
-									Le binero est un jeu du même type que le Sudoku, c'est un mélange de jeu de chiffres et de jeu de logique.<br />
-									Le but est de remplir la grille avec des 0 et des 1 (d'où le nom de binero).<br /><br />
-									Pour remplir la grille, il faut respecter trois règles :
-									<ul>
-										<li>
-											Il ne peut y avoir plus de deux 0 ou deux 1 consécutifs
-										</li>
-										<li>
-											Il y a le même nombre de 0 et de 1 sur chaque ligne et chaque colonne
-										</li>
-										<li>
-											Il ne peut y avoir deux colonnes ou deux lignes identiques
-										</li>
-									</ul>
-								</p>
-								<p align=right>
-									Avril&nbsp;2015
-								</p>
-								<a href="downloads/Binero.zip"
-   											download="Binero" class="btn btn-default" role="button">Téléchargement</a><br/><br/>
-							</div>
+			<div style = "text-align: center" id="main">
+                <h1 style = "text-align: justify">Mini Pong&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="PlayMiniPong.html" target="_blank" class="btn btn-default" role="button">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jouer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></h1> <br />
+                <img src="images/MiniPong.png" width = 80% style = "border-radius: 20px">
+				<div style="margin:0px 30px;">
+					<h4 style = "text-align: justify">Description</h4>
+					<p style = "text-align: justify">
+						Petit projet personnel réalisé en JavaScript avec la bibliothèque P5 pour pouvoir jouer à Pong directement sur son navigateur.
+						<br />Il y a la possibilité de jouer seul contre l'ordinateur
+						(ce n'est pas une IA, la barre de l'ordinateur suit la balle dès qu'elle franchit le milieu de terrain)
+						ou de jouer à deux l'un contre l'autre.
+						<br />Pendant une partie, la balle peut devenir verte ou rouge.
+						Lorsqu'elle est verte, elle adhère au mur sur lequel elle tape.
+						Et lorsqu'elle est rouge, elle accélère progressivement.
+						<br />Si un échange s'éternise, la balle reste rouge pour compliquer la tâche des joueurs.
+					</p>
+
+					<p align=right>
+						Mars&nbsp;2017
+					</p>
+					<br />
+				</div>
         </div>
 
     <!-- Footer -->
