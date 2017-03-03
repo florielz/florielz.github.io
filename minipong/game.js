@@ -17,6 +17,10 @@ function Game(computer){
 		fill(51);
 		noStroke();
 		rect(0, 0, wdth, hght);
+		stroke(255);
+		line(wdth/2, 0, wdth/2, hght-1);
+		noFill();
+		ellipse(wdth/2, hght/2, 100, 100);
 		stroke(0);
 		fill(255);
 
@@ -51,14 +55,17 @@ function Game(computer){
 		}
 		else{
 			textSize(15);
-			text("Press SPACE to launch the ball", wdth/2 - 106, hght/2 + 50);
+			text("Press SPACE to launch the ball", wdth/2 - 111, hght/2 + 70);
 			textSize(20);
 		}
 
 		this.ball.show();
-
-		text(scoreP1, wdth/2 - 24, 21);
-		text("|", wdth/2, 20);
-		text(scoreP2, wdth/2 + 16, 21);
+		if(scoreP1 > 9){
+			text(scoreP1, wdth/2 - 35, 21);
+		}
+		else{
+			text(scoreP1, wdth/2 - 27, 21);
+		}
+		text(scoreP2, wdth/2 + 13, 21);
 	}
 }

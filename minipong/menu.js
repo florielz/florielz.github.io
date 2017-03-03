@@ -1,6 +1,6 @@
 function Menu() {
-	this.lP = createVector(100, 250);
-	this.rP = createVector(500, 250);
+	this.lP = createVector(100, 210);
+	this.rP = createVector(500, 210);
 	this.buttonSize = createVector(200, 150);
 
 	this.update = function(game) {
@@ -50,5 +50,30 @@ function Menu() {
 		fill(0);
 		text("Player vs Computer", this.lP.x + 20, this.lP.y + 80);
 		text("Player vs Player", this.rP.x + 34, this.rP.y + 80);
+
+		fill(255);
+		textSize(30);
+		text("Controls", wdth/2 - 50, 400);
+		textSize(23);
+		text("Left Player", wdth/2 - 215, 500);
+		text("Right Player", wdth/2 + 110, 500);
+		textSize(20);
+
+		text("z", wdth/2 - 59, 470);
+		text("s", wdth/2 - 59, 530);
+
+		rect(wdth/2 + 53, 455, 3, 20);
+		triangle(wdth/2 + 48, 462, wdth/2 + 62, 462, wdth/2 + 55, 455);
+
+		rect(wdth/2 + 53, 515, 3, 20);
+		triangle(wdth/2 + 48, 528, wdth/2 + 62, 528, wdth/2 + 55, 535);
+
+		var touchSize = 50;
+		noFill();
+		rect(wdth/2 - 30 - touchSize, 440, touchSize, touchSize, 10);
+		rect(wdth/2 - 30 - touchSize, 500, touchSize, touchSize, 10);
+
+		rect(wdth/2 + 30, 440, touchSize, touchSize, 10);
+		rect(wdth/2 + 30, 500, touchSize, touchSize, 10);
 	}
 }
